@@ -1,0 +1,12 @@
+{
+  "name": "sistema-manutencao-preventiva",
+  "version": "1.0.0",
+  "description": "Protótipo acadêmico para controle de manutenção preventiva industrial",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
