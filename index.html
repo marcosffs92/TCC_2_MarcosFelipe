@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle de Manutenção Preventiva</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <div>
+      <h1>Controle de Manutenção Preventiva</h1>
+      <p>Registro e rastreabilidade de equipamentos industriais</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="menu">
+      <button class="aba ativa" data-tela="equipamentos">Equipamentos</button>
+      <button class="aba" data-tela="manutencoes">Manutenções</button>
+      <button class="aba" data-tela="historico">Histórico</button>
+      <button class="aba" data-tela="pecas">Peças utilizadas</button>
+    </nav>
+
+    <section id="equipamentos" class="tela ativa">
+      <div class="card">
+        <h2>Cadastro de equipamento</h2>
+        <form id="formEquipamento" class="grade-form">
+          <label>Nome do equipamento
+            <input id="equipNome" required placeholder="Ex.: Enchedora Linha 1">
+          </label>
+          <label>Setor / linha
+            <input id="equipSetor" required placeholder="Ex.: Envase">
+          </label>
+          <label>Fabricante
+            <input id="equipFabricante" placeholder="Ex.: KHS">
+          </label>
+          <label>Modelo
+            <input id="equipModelo" placeholder="Ex.: Innofill">
+          </label>
+          <button class="principal" type="submit">Salvar equipamento</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Equipamentos cadastrados</h2>
+        <table>
+          <thead><tr><th>Nome</th><th>Setor</th><th>Fabricante</th><th>Modelo</th><th>Ações</th></tr></thead>
+          <tbody id="listaEquipamentos"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="manutencoes" class="tela">
+      <div class="card">
+        <h2>Registrar manutenção</h2>
+        <form id="formManutencao" class="grade-form">
+          <label>Equipamento
+            <select id="manEquipamento" required></select>
+          </label>
+          <label>Data da manutenção
+            <input id="manData" type="date" required>
+          </label>
+          <label>Responsável
+            <input id="manResponsavel" required placeholder="Nome do técnico">
+          </label>
+          <label>Próxima manutenção
+            <input id="manProxima" type="date">
+          </label>
+          <label class="duplo">Descrição do serviço
+            <textarea id="manDescricao" required placeholder="Descreva as atividades realizadas"></textarea>
+          </label>
+          <button class="principal" type="submit">Registrar manutenção</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="historico" class="tela">
+      <div class="card">
+        <div class="linha-titulo">
+          <h2>Histórico de manutenções</h2>
+          <select id="filtroEquipamento"><option value="">Todos os equipamentos</option></select>
+        </div>
+        <table>
+          <thead><tr><th>Data</th><th>Equipamento</th><th>Setor</th><th>Serviço</th><th>Responsável</th><th>Próxima</th></tr></thead>
+          <tbody id="listaHistorico"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="pecas" class="tela">
+      <div class="card">
+        <h2>Registrar peça substituída</h2>
+        <form id="formPeca" class="grade-form">
+          <label>Manutenção relacionada
+            <select id="pecaManutencao" required></select>
+          </label>
+          <label>Nome da peça
+            <input id="pecaNome" required placeholder="Ex.: Rolamento 6204">
+          </label>
+          <label>Código da peça
+            <input id="pecaCodigo" placeholder="Ex.: 6204-2RS">
+          </label>
+          <label>Quantidade
+            <input id="pecaQuantidade" type="number" min="1" value="1">
+          </label>
+          <button class="principal" type="submit">Salvar peça</button>
+        </form>
+      </div>
+      <div class="card">
+        <h2>Relatório de substituição de peças</h2>
+        <table>
+          <thead><tr><th>Data</th><th>Equipamento</th><th>Peça</th><th>Código</th><th>Qtd.</th></tr></thead>
+          <tbody id="listaPecas"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="mensagem" class="mensagem"></div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #263238;
+}
+.topo {
+  background: #1d4f73;
+  color: #fff;
+  padding: 22px 40px;
+}
+.topo h1 { margin: 0 0 5px; font-size: 28px; }
+.topo p { margin: 0; opacity: .9; }
+.container { width: min(1180px, 94%); margin: 24px auto; }
+.menu { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+.aba {
+  border: 0;
+  background: #dfe7ec;
+  padding: 11px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.aba.ativa { background: #1d4f73; color: #fff; }
+.tela { display: none; }
+.tela.ativa { display: block; }
+.card {
+  background: #fff;
+  border: 1px solid #d9e0e5;
+  border-radius: 8px;
+  padding: 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+h2 { margin-top: 0; color: #1d4f73; font-size: 20px; }
+.grade-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+label { font-size: 14px; font-weight: 600; }
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b8c5ce;
+  border-radius: 5px;
+  margin-top: 5px;
+  background: #fff;
+}
+textarea { min-height: 90px; resize: vertical; }
+.duplo { grid-column: 1 / -1; }
+.principal {
+  width: fit-content;
+  border: 0;
+  background: #16724f;
+  color: #fff;
+  padding: 11px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { border-bottom: 1px solid #e3e8eb; padding: 10px 8px; text-align: left; vertical-align: top; }
+th { background: #eef3f6; }
+.botao-excluir {
+  border: 0;
+  background: #b13c3c;
+  color: #fff;
+  border-radius: 4px;
+  padding: 6px 9px;
+  cursor: pointer;
+}
+.linha-titulo { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.linha-titulo select { max-width: 300px; }
+.mensagem {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #263238;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 6px;
+  display: none;
+}
+@media (max-width: 760px) {
+  .grade-form { grid-template-columns: 1fr; }
+  .duplo { grid-column: auto; }
+  .linha-titulo { align-items: stretch; flex-direction: column; }
+}
